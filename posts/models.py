@@ -40,18 +40,17 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=255)
-    content = models.TextField(blank=False)
+    content = models.TextField(blank=True)
     image = models.ImageField(
         upload_to='images/',
         default='../default_posts_image_cdoz8g',
         blank=True
     )
-    place = models.CharField(max_length=150, blank=False)
+    place = models.CharField(max_length=150, blank=True)
     region = models.CharField(
         max_length=50,
         choices=REGION_CHOICES,
-        default='Europe',
-        blank=False
+        default='Europe'
     )
     image_filter = models.CharField(
         max_length=32,
