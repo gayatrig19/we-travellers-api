@@ -16,13 +16,20 @@ class PostListViewTests(APITestCase):
 
     def test_can_list_posts(self):
         gayatri = User.objects.get(username='gayatri')
-        Post.objects.create(owner=gayatri, title='test post title')
+        Post.objects.create(
+            owner=gayatri,
+            title='test post title',
+            place = 'test place'
+        )
         response = self.client.get('/posts/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_logged_in_user_can_create_post(self):
         self.client.login(username='gayatri', password='testpassword')
-        response = self.client.post('/posts/', {'title': 'test post title'})
+        response = self.client.post('/posts/', {
+            'title': 'test post title',
+            'place': 'test place'
+        })
         count = Post.objects.count()
         self.assertEqual(count, 1)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
@@ -46,12 +53,14 @@ class PostDetailViewTests(APITestCase):
         Post.objects.create(
             owner=gayatri, 
             title='test post title',
-            content='gayatris post content'
+            content='gayatris post content',
+            place='gayatris test place'
         )
         Post.objects.create(
             owner=sid,
             title='another post title',
-            content='sids post content'
+            content='sids post content',
+            place='sids test place'
         )
 
     def test_can_retrieve_post_using_valid_id(self):
@@ -65,7 +74,10 @@ class PostDetailViewTests(APITestCase):
 
     def test_user_can_update_own_post(self):
         self.client.login(username='gayatri', password='testpassword')
-        response = self.client.put('/posts/1/', {'title': 'a new title'})
+        response = self.client.put('/posts/1/', {
+            'title': 'a new title',
+            'place': 'gayatris test place'
+        })
         post = Post.objects.filter(pk=1).first()
         self.assertEqual(post.title, 'a new title')
         self.assertEqual(response.status_code, status.HTTP_200_OK)

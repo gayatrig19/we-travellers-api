@@ -46,7 +46,7 @@ class Post(models.Model):
         default='../default_posts_image_cdoz8g',
         blank=True
     )
-    place = models.CharField(max_length=150, blank=True)
+    place = models.CharField(max_length=150, blank=False)
     region = models.CharField(
         max_length=50,
         choices=REGION_CHOICES,
