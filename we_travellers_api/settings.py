@@ -37,6 +37,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-gayatrig19-wetravellers-icev1u906j1.ws-eu111.gitpod.io']
 
+CSRF_TRUSTED_ORIGINS= ['https://*.gitpod.io']
+
 
 # Application definition
 
@@ -50,6 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'rest_framework',
+    'django_filters',
 
     'profiles',
     'posts',
