@@ -62,7 +62,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = ['8000-gayatrig19-wetravellers-icev1u906j1.ws-eu111.gitpod.io',
-                 'localhost', 'https://we-travellers-api-125fa063dfcb.herokuapp.com']
+                 'localhost', 'we-travellers-api-125fa063dfcb.herokuapp.com']
 
 CSRF_TRUSTED_ORIGINS= ['https://*.gitpod.io']
 
