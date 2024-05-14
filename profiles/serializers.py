@@ -4,6 +4,11 @@ from followers.models import Follower
 
 
 class ProfileSerializer(serializers.ModelSerializer):
+    """
+    Serializer for Profile Model. is_owner returns true
+    or false - to check if the requesting user is or is not a
+    profile owner.
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     following_id = serializers.SerializerMethodField()
@@ -16,6 +21,12 @@ class ProfileSerializer(serializers.ModelSerializer):
         return request.user == obj.owner
 
     def get_following_id(self, obj):
+        """
+        Method to display the following_id - the same
+        id as the newly created Follower instance, in
+        order to know which Follower instance to delete 
+        when unfollowing a user.
+        """
         user = self.context['request'].user
         if user.is_authenticated:
             following = Follower.objects.filter(

@@ -18,8 +18,7 @@ class CommentLikeSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         """
         Allows user to create a likes on comments.
-        Returns a complete object instance
-        if data is valid.
+        Returns a complete object instance if data is valid.
         A method to prevent users from creating
         duplicate likes on comments.
         Interity error is raised if user likes the
