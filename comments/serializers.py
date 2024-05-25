@@ -3,6 +3,7 @@ from rest_framework import serializers
 from .models import Comment
 from commentlikes.models import CommentLike
 
+
 class CommentSerializer(serializers.ModelSerializer):
     """
     Serializer for the Comment model
@@ -61,7 +62,7 @@ class CommentSerializer(serializers.ModelSerializer):
 class CommentDetailSerializer(CommentSerializer):
     """
     Serializer for the Comment model used in Detail view.
-    Post is a read only field so that we dont have 
+    Post is a read only field so that we dont have
     to set it on each update.
     """
     post = serializers.ReadOnlyField(source='post.id')

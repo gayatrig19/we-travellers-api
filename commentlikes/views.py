@@ -19,7 +19,7 @@ class CommentLikeList(generics.ListCreateAPIView):
 
 class CommentLikeDetail(generics.RetrieveDestroyAPIView):
     """
-    Retrieve a comment like. 
+    Retrieve a comment like.
     Delete it by id if a user owns it.
     """
     permission_classes = [IsOwnerOrReadOnly]

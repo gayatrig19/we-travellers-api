@@ -24,11 +24,11 @@ class CommentList(generics.ListCreateAPIView):
         with a user upon creation.
         """
         serializer.save(owner=self.request.user)
-        
+
 
 class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
     """
-    Retrieve a comment. 
+    Retrieve a comment.
     Update or delete a comment by id if you are the owner.
     """
     permission_classes = [IsOwnerOrReadOnly]

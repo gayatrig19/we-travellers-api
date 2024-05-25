@@ -6,7 +6,7 @@ from .models import CommentLike
 class CommentLikeSerializer(serializers.ModelSerializer):
     """
     Serializer for the CommentLike model
-    The create method handles the unique 
+    The create method handles the unique
     constraint on 'owner' and 'comment'
     """
     owner = serializers.ReadOnlyField(source='owner.username')

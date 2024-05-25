@@ -107,3 +107,12 @@ I employed the Agile methodology and utilized a GitHub project board to organize
 ![project board](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716596350/github_project_board_mowwv7.png)
 
 </details>
+
+
+#### Milestones
+
+
+
+#### User Stories
+
+

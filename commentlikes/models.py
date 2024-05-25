@@ -7,7 +7,7 @@ class CommentLike(models.Model):
     """
     CommentLike model, related to User and Comment.
     Enables user to like the comments on the posts.
-    'unique_together' makes sure a user can't 
+    'unique_together' makes sure a user can't
     like the same comment twice.
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
