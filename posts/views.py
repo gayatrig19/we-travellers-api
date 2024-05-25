@@ -9,7 +9,7 @@ from .serializers import PostSerializer
 class PostList(generics.ListCreateAPIView):
     """
     List all posts or create a post if logged in.
-    The perform_create method associates the 
+    The perform_create method associates the
     post with the logged in user.
     """
     serializer_class = PostSerializer

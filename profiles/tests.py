@@ -5,7 +5,7 @@ from rest_framework.test import APITestCase
 
 
 class ProfileListViewTests(APITestCase):
-    """ 
+    """
     Profile creation upon registration, listing
     all profiles tests.
     """
@@ -50,7 +50,7 @@ class ProfileDetailViewTests(APITestCase):
     def test_logged_in_user_can_update_own_profile(self):
         self.client.login(username='gayatri', password='testpassword')
         response = self.client.put(
-            '/profiles/1/', 
+            '/profiles/1/',
             {'name': 'gayatri ghogare'}
         )
         profile = Profile.objects.filter(pk=1).first()

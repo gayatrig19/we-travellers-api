@@ -24,7 +24,7 @@ class ProfileSerializer(serializers.ModelSerializer):
         """
         Method to display the following_id - the same
         id as the newly created Follower instance, in
-        order to know which Follower instance to delete 
+        order to know which Follower instance to delete
         when unfollowing a user.
         """
         user = self.context['request'].user

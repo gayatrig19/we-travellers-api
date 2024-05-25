@@ -15,7 +15,7 @@ class Profile(models.Model):
     name = models.CharField(max_length=300, blank=True)
     bio = models.TextField(blank=True)
     image = models.ImageField(
-        upload_to='images/', 
+        upload_to='images/',
         default='../default_profile_image_uaa7nl'
     )
 
@@ -25,6 +25,7 @@ class Profile(models.Model):
     def __str__(self):
         return f"{self.owner}'s profile"
 
+
 def create_profile(sender, instance, created, **kwargs):
     """
     Makes sure every time a user is created, a
@@ -32,5 +33,6 @@ def create_profile(sender, instance, created, **kwargs):
     """
     if created:
         Profile.objects.create(owner=instance)
+
 
 post_save.connect(create_profile, sender=User)

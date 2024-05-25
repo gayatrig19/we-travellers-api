@@ -19,7 +19,7 @@ class PostListViewTests(APITestCase):
         Post.objects.create(
             owner=gayatri,
             title='test post title',
-            place = 'test place'
+            place='test place'
         )
         response = self.client.get('/posts/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -35,7 +35,7 @@ class PostListViewTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
     def test_user_not_logged_in_cant_create_post(self):
-        response = self.client.post('/posts/',{'title': 'post title'})
+        response = self.client.post('/posts/', {'title': 'post title'})
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
 
@@ -51,7 +51,7 @@ class PostDetailViewTests(APITestCase):
         sid = User.objects.create_user(
             username='sid', password='testpasswordone')
         Post.objects.create(
-            owner=gayatri, 
+            owner=gayatri,
             title='test post title',
             content='gayatris post content',
             place='gayatris test place'
@@ -81,7 +81,7 @@ class PostDetailViewTests(APITestCase):
         post = Post.objects.filter(pk=1).first()
         self.assertEqual(post.title, 'a new title')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-    
+
     def test_user_cant_update_another_users_post(self):
         self.client.login(username='gayatri', password='testpassword')
         response = self.client.put('/posts/2/', {'title': 'a new title'})

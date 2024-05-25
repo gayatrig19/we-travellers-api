@@ -16,7 +16,6 @@ class PostSerializer(serializers.ModelSerializer):
     comments_count = serializers.ReadOnlyField()
     bookmarks_count = serializers.ReadOnlyField()
 
-
     def validate_image(self, value):
         """
         Validate user uploaded images for
@@ -52,7 +51,7 @@ class PostSerializer(serializers.ModelSerializer):
             ).first()
             return like.id if like else None
         return None
-    
+
     def get_bookmark_id(self, obj):
         """
         Method to let us know if the current user
