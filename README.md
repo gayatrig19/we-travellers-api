@@ -66,3 +66,44 @@ We Travellers website is developed as a Portfolio Project#5 (Advanced Front End 
 - The posts are accessible to all the users regardless of their logged-in status. Users can also search for travel stories using search / filter functionality. Users can filter posts by title, profile username, region and place to easily find what they are looking for, making their experience smooth and enjoyable.
 - The website navigation provides easy access to all website sections, including personalized content for logged in users.
 
+
+### Agile Planning 
+
+I employed the Agile methodology and utilized a GitHub project board to organize and develop my user stories starting from the project planning stage and continuing until the final product was built. To enhance clarity and structure, a user story template is designed that precisely outlines each user story with an acceptance criteria to be fulfilled. Small features have been assigned to 7 milestones.
+
+- All User Stories include:
+  - Acceptance Criteria
+  - Labels (MoSCoW Prioritization)
+
+- Labels have been used to mark which features the project : 'must have', 'should have', 'could have' and 'nice to have'. The prioritization was done so that a MVP for the project is created in time I have and only focus on the 'should haves' or 'could haves' if the time allows.
+
+- I have created two additional labels to indicate which stories required the backend work and which ones required the front-end work:    
+    - **API-backend** 
+    - **React-frontend**
+
+- The user stories that have both labels is discussed in each README. Instead of creating separate 'developer stories' and 'user stories', I have incorporated both in a single workflow for more structured work with less chaos.
+
+- Each User story was checked for the acceptance criteria have been met and closed.
+
+- The detailed Project Board with all user stories can be found here. [PROJECT BOARD-link](https://github.com/gayatrig19/we-travellers-frontend/projects?query=is%3Aopen)
+
+<details><summary>Issues Template</summary>
+
+
+![issue template](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716596362/issue_template_cwh9pl.png)
+
+</details>
+
+<details><summary>Issues List</summary>
+
+
+![issues](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716596374/issues_list_nspeun.png)
+
+</details>
+
+<details><summary>Project Board</summary>
+
+
+![project board](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716596350/github_project_board_mowwv7.png)
+
+</details>
