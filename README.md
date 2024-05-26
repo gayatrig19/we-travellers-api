@@ -111,17 +111,72 @@ I employed the Agile methodology and utilized a GitHub project board to organize
 
 #### Milestones
 
-- 1. Initial Project Setup:The first task in starting the project was to set it up. All the tasks from setting up github repository to installing django, setting up django app and related packages and libraries were included in this milestone. The acceptance criteria was refined for each of the setup to be completed for clarity and ease of understanding.
+- 1- Initial Project Setup:The first task in starting the project was to set it up. All the tasks from setting up github repository to installing django, setting up django app and related packages and libraries were included in this milestone. The acceptance criteria was refined for each of the setup to be completed for clarity and ease of understanding.
 
-- 2. Navigation and Authentication: This milestone covers user authentication and authorization i.e. user sign-up, sign-in and signout so that user can explore complete features and functionality of the website.
-- 3. Profiles: Allows users to Create, Retrieve and Edit (CRE) own details. Also allows other users to find out more about a user.
-- 4. Posts: This milestone includes all the features enabling the CRUD functionality for the user. 
-- 5. Comments: Includes all the features enabling the CRUD functionality for the user.
-- 6. Like and Bookmark Posts: Allows users to like / unlike and bookmark posts. Users can perform create, retrieve and delete (CRD) functionality on liked and bookmarked posts.
-- 7. Documentation and Deployment: This milestone was needed so that I can document my project in-depth with all website features, testing, deployment information. Deployment section is included as it was absolutely necessary and important to have a live link of fully functional website with no errors so that everyone can have access to the application.
-
-
+- 2- Navigation and Authentication: This milestone covers user authentication and authorization i.e. user sign-up, sign-in and signout so that user can explore complete features and functionality of the website.
+- 3- Profiles: Allows users to Create, Retrieve and Edit (CRE) own details. Also allows other users to find out more about a user.
+- 4- Posts: This milestone includes all the features enabling the CRUD functionality for the user. 
+- 5- Comments: Includes all the features enabling the CRUD functionality for the user.
+- 6.- Like and Bookmark Posts: Allows users to like / unlike and bookmark posts. Users can perform create, retrieve and delete (CRD) functionality on liked and bookmarked posts.
+- 7- Documentation and Deployment: This milestone was needed so that I can document my project in-depth with all website features, testing, deployment information. Deployment section is included as it was absolutely necessary and important to have a live link of fully functional website with no errors so that everyone can have access to the application.
 
 #### User Stories
+
+Each Milestone covers the user stories for small features allowing me to prioritize the most important ones to least in project development.
+
+- Milestone 1- Initial Project Setup
+  - As a developer, I need to set up the we-travellers api project with all the necessary components and configurations so that I can ensure a smooth API development and deployment process.
+    - Initialize and setup a GitHub repository with a README file using CI Gitpod template
+    - Install packages including Django, Cloudinary, Pillow.
+    - Create new Django Project.
+    - Add a requirements.txt file listing all project dependencies.
+    - Create env.py file to store sensitive information.
+    - Update the settings.py file to notify Django of the installed supporting libraries
+    - Configure the project to use ElephantSQL database.
+    - Deploy project to Heroku to test deployment is successful.
+
+- Milestone 2- Navigation and Authentication
+  - As a Admin/ User, I can register and sign in so that I can access content which requires to be authorised.
+    - install dj-rest-auth add to settings.py
+    - install simplejwt library
+    - create superuser for admin functionalities and website content management.
+  
+- Milestone 3- Profiles
+  - As a user, I can view other users profiles so that I can see their posts and learn more about them.
+  - As a user, I can view statistics about a specific user: bio, number of posts, follows and users followed so that I can learn more about them.
+  - As a logged in user, I can edit my profile details so that I can keep it up to date.
+  - As a logged in user (profile owner), I can update my username and password details so that I can change my display name and keep my profile safe.
+  - As a User, I can use a default profile image so that I don't have to upload my own.
+  - As a logged in user I can follow other users so that I can see posts by specific users in my posts feed and stay updated with any new posts that they create.
+  - As a logged in user I can unfollow other users so that I can remove posts by specific users from my posts feed.
+  
+- Milestone 4- Posts
+  - As a logged-in User, I can post an image so that I can share my travel experience with others.
+  - As a logged-in post owner, I can edit my own posts so that I can make corrections or update my post after it was created.
+  - As a logged-in post owner, I can delete my own posts so that I can remove the posts I don’t want to share anymore.
+  - As a User, I can click on a post to view the post details so that I can find out more information about the post.
+  - As a user, I can view the list of all the most recent posts so that I can browse through them and keep up to date with the newest content.
+  - As a user, I can view all the posts by a specific user so that I can catch up on their latest posts, or decide I want to follow them.
+  - As a User, I can search / filter for posts with keywords so that I can find the posts and user profiles I am curious about and learn more about them.
+
+- Milestone 5- Comments
+  - As a logged in user, I can add comments to a post so that I can share my thoughts about the post and engage with the community.
+  - As a logged-in owner of a comment I can edit my comment so that I can fix or update my existing comment.
+  - As a user I can read comments on posts so that I can read what other users think about the posts.
+  - As an owner of a comment I can delete my comment so that I can remove the comments I don't want to be posted anymore.
+  - As a logged-in User, I can like other users' comments so that I can show my appreciation to their opinion.
+
+- Milestone 6- Like and Bookmark Posts
+  - As a logged in user, I can like a users' posts so that I can show my appreciation for the posts and authors that interest me.
+  - As a logged-in user, I can unlike a post so that I can remove a like if I don't feel to like the post anymore.
+  - As a logged-in User, I can bookmark the posts so that I can save posts and revisit them later.
+  - As a logged-in User, I can remove bookmark tags (labels) from the posts so that they are no longer displayed on the bookmarks page.
+
+- Milestone 7- Documentation and Deployment
+  - As a developer, I need to make sure the project is deployed to heroku so that everything works and looks as expected.
+  - As a developer, I need to create readme.md file so that the project is documented in detail.
+
+
+
 
 
