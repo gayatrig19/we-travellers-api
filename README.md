@@ -177,6 +177,103 @@ Each Milestone covers the user stories for small features allowing me to priorit
   - As a developer, I need to create readme.md file so that the project is documented in detail.
 
 
+## The Structure Plane
+
+### Features
+
+All the features are implemented with user stories in mind.
+
+#### Homepage
+
+A welcome message is displayed on clicking the deployed link for the We Travellers API.
+
+![API-Homepage](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716760810/API_homepage_lgext8.png)
+
+
+#### Posts
+
+
+`As a logged-in User, I can post an image so that I can share my travel experience with others.`
+
+`As a user, I can view the list of all the most recent posts so that I can browse through them and keep up to date with the newest content.`
+
+Posts are the main feature of the application, all other features functions in relation with posts.
+
+The posts list view can be accessed here: https://we-travellers-api-125fa063dfcb.herokuapp.com/posts/
+
+ -Endpoint ``/posts/``
+    -Methods used:
+     `GET`  used to list view posts
+     `POST` used to create posts
+
+![Posts-View](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716762371/Posts_listview_lpsljs.png)
+
+Additional fields added with the help of serializer to JSON data:
+
+- is_owner
+- profile_id
+- profile_image
+
+To get the like, comments and bookmark counts for each posts following fields are added:
+
+- like_id
+- bookmark_id
+- likes_count
+- comments_count
+- bookmarks_count
+
+- Filtering fields have been implemented to Search and Filter posts:
+
+`As a User, I can search / filter for posts with keywords so that I can find the posts and user profiles I am curious about and learn more about them.`
+
+  - Text Search for posts can be performed using owner_username, title, place and region
+  - Filtering for posts can be performed as:
+     - Posts that are bookmarked by users to allow users to view a list of posts bookmarked by them
+     - Posts that are liked by users to allow them to view a list of liked posts by them on filtering
+     - Posts by users the user is following so that the posts can be viewed in the user feed.
+     - Posts that are created / added by user so that users can view a list of their own posts.
+  - To allow ordering of the posts list by likes_count, comments_count, bookmarks_count, likes_created_at and bookmarks_created_at
+
+  `As a logged-in post owner, I can edit my own posts so that I can make corrections or update my post after it was created.`
+
+  `As a logged-in post owner, I can delete my own posts so that I can remove the posts I don’t want to share anymore.`
+
+  `As a User, I can click on a post to view the post details so that I can find out more information about the post.`
+
+  
+  -Endpoint `/posts/int:pk/`
+  -Methods:
+   `GET`  used to get a post
+   `PUT`  used to edit/update a post
+   `DELETE` used to delete a post
+
+ 
+  ![Posts-detailview](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716766204/Posts_detailview_gcxgci.png)
+
+  User can only edit or delete their posts once they are logged in. Logged-in users can also view posts that they have liked and bookmarked. All the users can view number of likes, comments and bookmarks a post has received.
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
