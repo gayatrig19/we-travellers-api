@@ -120,6 +120,7 @@ I employed the Agile methodology and utilized a GitHub project board to organize
 - 6.- Like and Bookmark Posts: Allows users to like / unlike and bookmark posts. Users can perform create, retrieve and delete (CRD) functionality on liked and bookmarked posts.
 - 7- Documentation and Deployment: This milestone was needed so that I can document my project in-depth with all website features, testing, deployment information. Deployment section is included as it was absolutely necessary and important to have a live link of fully functional website with no errors so that everyone can have access to the application.
 
+
 #### User Stories
 
 Each Milestone covers the user stories for small features allowing me to prioritize the most important ones to least in project development.
@@ -181,7 +182,8 @@ Each Milestone covers the user stories for small features allowing me to priorit
 
 ### Features
 
-All the features are implemented with user stories in mind.
+All the features are implemented with user stories in mind. To see all the fields included in each model for API, see [Database Design](#database-design)
+
 
 #### Homepage
 
@@ -191,7 +193,6 @@ A welcome message is displayed on clicking the deployed link for the We Travelle
 
 
 #### Posts
-
 
 `As a logged-in User, I can post an image so that I can share my travel experience with others.`
 
@@ -252,6 +253,7 @@ To get the like, comments and bookmark counts for each posts following fields ar
 
   User can only edit or delete their posts once they are logged in. Logged-in users can also view posts that they have liked and bookmarked. All the users can view number of likes, comments and bookmarks a post has received.
 
+
 #### Comments
 
 `As a logged in user, I can add comments to a post so that I can share my thoughts about the post and engage with the community.`
@@ -299,6 +301,8 @@ Filtering is implemented to:
 Users can edit or delete their comments only when logged-in. The commentlikes_count allow users to view number of likes on comments
 
 
+#### Commentlikes
+
 `As a logged-in User, I can like other users' comments so that I can show my appreciation to their opinion.`
 
       -Endpoint `/commentlikes/`
@@ -316,17 +320,19 @@ Users can unlike the comment by returning to the comment already liked. The endp
 
       -Endpoint `/commentlikes/int:pk/`
         -Methods:
+        `GET` used to view comment likes
         `DELETE` used to unlike a comment
 
 
-#### Like and Bookmark Posts
+#### Likes 
 
 `As a logged in user, I can like a users' posts so that I can show my appreciation for the posts and authors that interest me.`
+
 `As a logged-in user, I can unlike a post so that I can remove a like if I don't feel to like the post anymore.`
 
 The likes list view can be accessed here:https://we-travellers-api-125fa063dfcb.herokuapp.com/likes/
         
-      -Endpoint `/commentlikes/`
+      -Endpoint `/likes/`
         -Methods:
         `GET`  used to list view likes on posts
         `POST`  used to like a post
@@ -339,8 +345,11 @@ Users can unlike the posts by returning to the post already liked (either in a p
 
       -Endpoint `/likes/int:pk/`
         -Methods:
+        `GET` used to view likes
         `DELETE` used to unlike a post
 
+
+#### Bookmarks
 
 `As a logged-in User, I can bookmark the posts so that I can save posts and revisit them later.`
 
@@ -363,7 +372,85 @@ Users can remove the bookmark from  the posts by returning to the post already b
 
       -Endpoint `/bookmarks/int:pk/`
         -Methods:
+        `GET` used to view bookmarks
         `DELETE` used to remove (delete) bookmark from a post
+
+
+#### Profiles
+
+`As a user, I can view other users profiles so that I can see their posts and learn more about them.`
+
+`As a user, I can view statistics about a specific user: bio, number of posts, follows and users followed so that I can learn more about them.`
+
+The profiles list view can be accessed here: https://we-travellers-api-125fa063dfcb.herokuapp.com/profiles/
+
+        -Endpoint `/profiles/`
+        -Methods:
+        `GET`  used to list view profiles
+
+![Profiles_ListView](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716803775/Profiles_listview_iip1dh.png)
+
+Additional fields added with the help of serializer to JSON data:
+
+- is_owner
+- following_id
+- posts_count
+- followers_count
+- following_count
+
+No option to create profile from list view as this is automatically done upon registration with the help of signal created. 
+
+If a user uses the id from the profile object and follows current URL with /id they can access profile detail view where if authorised (ie. profiles 'is_owner' field=true) they will be able to edit the profile. 
+
+Users can view the statistics of a specific user: their bio, profile avatar, total count of posts(posts_count), total number of users a user is following(following_count) and total number of followers a user has(followers_count). 
+
+Filtering is impelemented to:
+- Filter backend
+  - By user profiles that are following users and profiles followed by user to display most popular profiles on front-end.
+
+
+`As a logged in user, I can edit my profile details so that I can keep it up to date.`
+
+`As a logged in user (profile owner), I can update my username and password details so that I can change my display name and keep my profile safe.`
+
+`As a User, I can use a default profile image so that I don't have to upload my own.`
+
+      -Endpoint `/profiles/int:pk/`
+        -Methods:
+        `GET`  used to view profile
+        `PUT`  used to edit/update a profile
+
+![Profiles_DetailView](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716806688/Profiles_detailview_vre0o3.png)
+
+
+#### Followers
+
+`As a logged in user I can follow other users so that I can see posts by specific users in my posts feed and stay updated with any new posts that they create.`
+
+The Followers list view can be accessed here: https://we-travellers-api-125fa063dfcb.herokuapp.com/followers/
+
+      -Endpoint `/followers/`
+        -Methods:
+        `GET`  used to list view the followers
+        `POST`  used to follow a user
+
+Users can follow and unfollow user profiles they are interested in by either accessing the side panel for most popular profiles or by accessing detail view of user profiles on the front-end.
+
+
+`As a logged in user I can unfollow other users so that I can remove posts by specific users from my posts feed.`
+
+    -Endpoint `/followers/int:pk/`
+        -Methods:
+        `GET` used to view followers
+        `DELETE` used to unfollow a user
+
+![Followers_Detailview](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716808825/Followers_detailview_hw1tgd.png)
+
+The unique together Meta class makes sure user can't follow the same user twice to avoid getting duplicate values stored in database.
+
+
+
+
 
 
 
