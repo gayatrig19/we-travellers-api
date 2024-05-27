@@ -187,7 +187,7 @@ All the features are implemented with user stories in mind.
 
 A welcome message is displayed on clicking the deployed link for the We Travellers API.
 
-![API-Homepage](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716760810/API_homepage_lgext8.png)
+![API_Homepage](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716760810/API_homepage_lgext8.png)
 
 
 #### Posts
@@ -201,12 +201,12 @@ Posts are the main feature of the application, all other features functions in r
 
 The posts list view can be accessed here: https://we-travellers-api-125fa063dfcb.herokuapp.com/posts/
 
- -Endpoint ``/posts/``
-    -Methods used:
-     `GET`  used to list view posts
-     `POST` used to create posts
+      -Endpoint `/posts/`
+        -Methods used:
+        `GET`  used to list view posts
+        `POST` used to create posts
 
-![Posts-View](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716762371/Posts_listview_lpsljs.png)
+![API_Posts_View](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716762371/Posts_listview_lpsljs.png)
 
 Additional fields added with the help of serializer to JSON data:
 
@@ -241,18 +241,135 @@ To get the like, comments and bookmark counts for each posts following fields ar
   `As a User, I can click on a post to view the post details so that I can find out more information about the post.`
 
   
-  -Endpoint `/posts/int:pk/`
-  -Methods:
-   `GET`  used to get a post
-   `PUT`  used to edit/update a post
-   `DELETE` used to delete a post
+       -Endpoint `/posts/int:pk/`
+         -Methods:
+         `GET`  used to get a post
+         `PUT`  used to edit/update a post
+         `DELETE` used to delete a post
 
  
-  ![Posts-detailview](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716766204/Posts_detailview_gcxgci.png)
+  ![API_Posts_Detailview](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716766204/Posts_detailview_gcxgci.png)
 
   User can only edit or delete their posts once they are logged in. Logged-in users can also view posts that they have liked and bookmarked. All the users can view number of likes, comments and bookmarks a post has received.
 
-  
+#### Comments
+
+`As a logged in user, I can add comments to a post so that I can share my thoughts about the post and engage with the community.`
+
+`As a user I can read comments on posts so that I can read what other users think about the posts.`
+
+The comments list view can be accessed here: https://we-travellers-api-125fa063dfcb.herokuapp.com/comments/
+
+     -Endpoint `/comments/`
+       -Methods:
+       `GET`  used to list view comments
+       `POST`  used to create a comment
+
+![API_Comments_Listview](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716767603/Comments_listview_ifsaia.png)
+
+Additional fields added with the help of serializer to JSON data:
+
+  - is_owner
+  - profile_id
+  - profile_image
+  - commentlike_id
+  - commentlikes_count
+  - created_at
+  - updated_at
+
+` naturaltime` is implemented fir created_at and updated_at for users to have time in human readable format.
+
+Filtering is implemented to:
+ - Filter Backend by posts so that comments are displayed under correct post on front end. Comments are ordered in descending order so that newest comments appear at the top.
+
+
+`As a logged-in owner of a comment I can edit my comment so that I can fix or update my existing comment.`
+
+`As an owner of a comment I can delete my comment so that I can remove the comments I don't want to be posted anymore.`
+
+      -Endpoint `/comments/int:pk/`
+        -Methods:
+        `GET`  used to list view comments
+        `PUT`  used to edit/update a comment
+        `DELETE` used to delete a comment
+
+
+![API_Comments_DetailView](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716768690/comments_detailview_uwbmme.png)
+
+Users can edit or delete their comments only when logged-in. The commentlikes_count allow users to view number of likes on comments
+
+
+`As a logged-in User, I can like other users' comments so that I can show my appreciation to their opinion.`
+
+      -Endpoint `/commentlikes/`
+        -Methods:
+        `GET`  used to list view commentlikes
+        `POST`  used to like a comment
+
+The commentlikes list view can be accessed here: https://we-travellers-api-125fa063dfcb.herokuapp.com/commentlikes/
+
+![Comment_LikeView](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716769182/Commentlikes_listview_mwjux8.png)
+
+The unique together Meta class makes sure user can't like the same comment twice.
+
+Users can unlike the comment by returning to the comment already liked. The endpoint for deleting commentlike is:
+
+      -Endpoint `/commentlikes/int:pk/`
+        -Methods:
+        `DELETE` used to unlike a comment
+
+
+#### Like and Bookmark Posts
+
+`As a logged in user, I can like a users' posts so that I can show my appreciation for the posts and authors that interest me.`
+`As a logged-in user, I can unlike a post so that I can remove a like if I don't feel to like the post anymore.`
+
+The likes list view can be accessed here:https://we-travellers-api-125fa063dfcb.herokuapp.com/likes/
+        
+      -Endpoint `/commentlikes/`
+        -Methods:
+        `GET`  used to list view likes on posts
+        `POST`  used to like a post
+
+![Like_Listview](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716770161/Likes_listview_n48azj.png)
+
+The unique together Meta class makes sure user can't like the same post twice. Users can view all the liked posts in a list view so that they can easily access the posts by other users that they have liked.
+
+Users can unlike the posts by returning to the post already liked (either in a post list view or post detail view on front end) . The endpoint for deleting like is:
+
+      -Endpoint `/likes/int:pk/`
+        -Methods:
+        `DELETE` used to unlike a post
+
+
+`As a logged-in User, I can bookmark the posts so that I can save posts and revisit them later.`
+
+The bookmarks list view can be accessed here: https://we-travellers-api-125fa063dfcb.herokuapp.com/bookmarks/
+
+      -Endpoint `/bookmarks/`
+        -Methods:
+        `GET`  used to list view the bookmarked posts
+        `POST`  used to bookmark a post
+
+![Bookmark_ListView](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716770173/bookmark_listview_mie5kg.png)
+
+
+The unique together Meta class makes sure user can't bookmark the same post twice. Users can view all the bookmarked posts in a list view so that they can easily access the posts by other users that they have bookmarked.
+
+
+`As a logged-in User, I can remove bookmark tags (labels) from the posts so that they are no longer displayed on the bookmarks page.`
+
+Users can remove the bookmark from  the posts by returning to the post already bookmarked (either in a post list view or post detail view on front end) . The endpoint for deleting the bookmark on post is:
+
+      -Endpoint `/bookmarks/int:pk/`
+        -Methods:
+        `DELETE` used to remove (delete) bookmark from a post
+
+
+
+
+
+
 
 
 
