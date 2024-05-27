@@ -421,6 +421,7 @@ Filtering is impelemented to:
 
 ![Profiles_DetailView](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716806688/Profiles_detailview_vre0o3.png)
 
+A default profile image is added in imagefield for the user, if user has not uploaded one.
 
 #### Followers
 
@@ -452,7 +453,55 @@ The unique together Meta class makes sure user can't follow the same user twice 
 
 ### Database Design
 
+The database ER diagram was designed using [SmartDraw](https://www.smartdraw.com/entity-relationship-diagram/).
+
 ![we_travellers_entity_relationship_diagram](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716809973/We_Travellers_ER_Diagram_wvul4m.png)
+
+
+## Technologies
+
+### Tools and Technologies
+
+- Gitpod - used to develop the website
+- [GitHub](https://github.com/) to host the source code. 
+- Git - used to provide the version control to commit and push code to the repository.
+- Python - used as the main language to code the logic of the page
+- Django==4.2 - framework used
+- djangorestframework==3.15.1 - framework used to build API
+- Heroku - to deploy the app
+- [CI Database Maker](https://dbs.ci-dbs.net/) - for PostgreSQL database system used for the application database.
+- [SmartDraw](https://www.smartdraw.com/) used to generate the ER Diagram
+- ESlint - used to check java script code for errors.
+
+### Imports
+
+#### Installed packages
+
+- cloudinary==1.40.0 - media managment cloudinary used to store images
+- dj-database-url==0.5.0 - Django utility allows to utilize DATABASE_URL environment variable to configure Django application
+- dj-rest-auth==2.1.9 - Drop-in API endpoints for handling authentication securely in Django Rest Framework. Works especially well with SPAs (e.g., React, Vue, Angular), and Mobile applications.
+- django-allauth==0.44.0 - authentication in django allowing user to sign- up/ sign-in/log-out
+- requests-oauthlib==2.0.0 - installed with the allauth above
+- django-cloudinary-storage==0.3.0 - cloudinary storage
+- psycopg2==2.9.9 - additional dependency needed to support PostgreSQL when deployed to heroku
+- Pillow==10.3.0 - image processing capibilities
+- asgiref==3.8.1 - ASGI is a standard for Python asynchronous web apps and servers to communicate with each other, and positioned as an asynchronous successor to WSGI.
+- gunicorn==22.0.0 - Python HTTP server for WSGI applications.
+- django-cors-headers==4.3.1 - A Django App that adds Cross-Origin Resource Sharing (CORS) headers to responses. This allows in-browser requests to your Django application from other origins.
+- django-filter==24.2 - installed to use djangofilterbackend
+- django-humanize and humanize - installed to use naturaltime for datetime format
+- djangorestframework-simplejwt==5.3.1 - JSON Web Token authentication plugin for DRF.
+
+Installed as dependencies with other packages:
+- oauthlib==3.2.2
+- PyJWT==2.8.0
+- python3-openid==3.2.0
+- sqlparse==0.5.0
+- pytz==2024.1
+
+
+
+
 
 
 
