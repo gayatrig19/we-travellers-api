@@ -500,6 +500,21 @@ Installed as dependencies with other packages:
 - pytz==2024.1
 
 
+## Testing
+
+### Validator Testing
+
+#### Python Validation
+
+No errors were found when passing each file through [CI Python Linter](https://pep8ci.herokuapp.com/)
+
+Each python file in this repository has been run through python linter. Minor indentation, trailing whitespace and no new line/blank line at end of file errors were corrected. No known errors are now present. Each of the files tested has received the same success result as below:
+
+![python_validation_check](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716843401/python_validation_result_yzzbcy.png)
+
+
+
+
 
 
 
