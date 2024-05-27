@@ -86,24 +86,19 @@ I employed the Agile methodology and utilized a GitHub project board to organize
 
 - The detailed Project Board with all user stories can be found here. [PROJECT BOARD-link](https://github.com/gayatrig19/we-travellers-frontend/projects?query=is%3Aopen)
 
-<details><summary>Issues Template</summary>
+- Issues Template
+
+![issue-template](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716596362/issue_template_cwh9pl.png)
 
 
-![issue template](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716596362/issue_template_cwh9pl.png)
-
-</details>
-
-<details><summary>Issues List</summary>
-
+- Issues List
 
 ![issues](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716596374/issues_list_nspeun.png)
 
-</details>
 
-<details><summary>Project Board</summary>
+- Project Board
 
-
-![project board](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716596350/github_project_board_mowwv7.png)
+![project-board](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716596350/github_project_board_mowwv7.png)
 
 </details>
 
@@ -516,13 +511,27 @@ Each python file in this repository has been run through python linter. Minor in
 ### Manual Testing
 
 #### Functional Testing
+All functions have been manually tested to make sure each function works as intended and only for users as intended. Testing of the entire full stack application can be found within ![FRONT-END REPO](https://github.com/gayatrig19/we-travellers-frontend)
 
 #### Negative Testing
+All functions have been tested to make sure no functions are availabale to unauthorised users etc. This was done throughout the entire development process. Full application testing can be found within ![FRONT-END REPO](https://github.com/gayatrig19/we-travellers-frontend)
 
 
 ### Automatic Testing
 
 #### Unit Testing
+
+Unit tests have been created and run on the We Travellers API to test basic CRUD functionality and user permissions for the Post and Profile models.
+
+  - Link to tests files can be found here:
+      - [POST](https://github.com/gayatrig19/we-travellers-api/blob/main/posts/tests.py)
+      - [PROFILE](https://github.com/gayatrig19/we-travellers-api/blob/main/profiles/tests.py)
+
+  - Unit tests outcome when run ``python manage.py test``
+
+  ![python_unit_tests](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716851232/python_unit_tests_result_ukghbh.png)
+
+
 
 ## Bugs
 
@@ -609,6 +618,7 @@ For more details on how to clone the repository in order to create a copy for ow
 
 
 ## Credits
+
 
 
 
