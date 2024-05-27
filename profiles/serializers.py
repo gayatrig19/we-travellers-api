@@ -17,6 +17,11 @@ class ProfileSerializer(serializers.ModelSerializer):
     following_count = serializers.ReadOnlyField()
 
     def get_is_owner(self, obj):
+        """
+        Checks if the current user is the owner of the object.
+        Returns True if the current user is the owner, False
+        otherwise.
+        """
         request = self.context['request']
         return request.user == obj.owner
 

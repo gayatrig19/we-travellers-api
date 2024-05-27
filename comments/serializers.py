@@ -19,6 +19,11 @@ class CommentSerializer(serializers.ModelSerializer):
     updated_at = serializers.SerializerMethodField()
 
     def get_is_owner(self, obj):
+        """
+        Checks if the current user is the owner of the object.
+        Returns True if the current user is the owner, False
+        otherwise.
+        """
         request = self.context['request']
         return request.user == obj.owner
 
