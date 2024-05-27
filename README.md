@@ -23,7 +23,6 @@ We Travellers website is developed as a Portfolio Project#5 (Advanced Front End 
       - [User Stories](#user-stories)
   - [The Structure Plane](#the-structure-plane)
     - [Features](#features)
-    - [Features Left To Implement](#features-left-to-implement)
   - [The Skeleton Plane](#the-skeleton-plane)
     - [Database Design](#database-design)
   - [Technologies](#technologies)
@@ -447,6 +446,13 @@ Users can follow and unfollow user profiles they are interested in by either acc
 ![Followers_Detailview](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716808825/Followers_detailview_hw1tgd.png)
 
 The unique together Meta class makes sure user can't follow the same user twice to avoid getting duplicate values stored in database.
+
+
+## The Skeleton Plane
+
+### Database Design
+
+![we_travellers_entity_relationship_diagram](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716809973/We_Travellers_ER_Diagram_wvul4m.png)
 
 
 
