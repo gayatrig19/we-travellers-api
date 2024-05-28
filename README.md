@@ -2,11 +2,11 @@
 
 This README is for the backend api of a full stack web application - We Travellers. This API provides a backend database (models and logic) to allow the frontend React application to perform CRUD operations.
 
-   - Live API link goes here 
    - To view the api in a nicer format install a JSON extension like [this one](https://chromewebstore.google.com/detail/jsonvue/chklaanhfefbnpoihckbnefhakgolnmc)
 
+   - Live API link goes here 
    - Link to the live site: 
-   - Link to the Front-End repository:
+   - [Link to the Front-End repository](https://github.com/gayatrig19/we-travellers-frontend)
 
 
 We Travellers website is developed as a Portfolio Project#5 (Advanced Front End / React) for the Code Institute's Full Stack Software Development Course.
@@ -86,21 +86,19 @@ I employed the Agile methodology and utilized a GitHub project board to organize
 
 - The detailed Project Board with all user stories can be found here. [PROJECT BOARD-link](https://github.com/gayatrig19/we-travellers-frontend/projects?query=is%3Aopen)
 
-- Issues Template
+- **Issues Template**
 
 ![issue-template](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716596362/issue_template_cwh9pl.png)
 
 
-- Issues List
+- **Issues List**
 
 ![issues](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716596374/issues_list_nspeun.png)
 
 
-- Project Board
+- **Project Board**
 
 ![project-board](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716596350/github_project_board_mowwv7.png)
-
-</details>
 
 
 #### Milestones
@@ -466,7 +464,7 @@ The database ER diagram was designed using [SmartDraw](https://www.smartdraw.com
 - Heroku - to deploy the app
 - [CI Database Maker](https://dbs.ci-dbs.net/) - for PostgreSQL database system used for the application database.
 - [SmartDraw](https://www.smartdraw.com/) used to generate the ER Diagram
-- ESlint - used to check java script code for errors.
+- [CI Python Linter](https://pep8ci.herokuapp.com/) - to check python code files for errors.
 
 ### Imports
 
@@ -511,13 +509,13 @@ Each python file in this repository has been run through python linter. Minor in
 ### Manual Testing
 
 #### Functional Testing
-All functions have been manually tested to make sure each function works as intended and only for users as intended. Testing of the entire full stack application can be found within ![FRONT-END REPO](https://github.com/gayatrig19/we-travellers-frontend)
+All functions have been manually tested to make sure each function works as intended and only for users as intended. Testing of the entire full stack application can be found within [FRONT-END REPO](https://github.com/gayatrig19/we-travellers-frontend)
 
 #### Negative Testing
-All functions have been tested to make sure no functions are availabale to unauthorised users etc. This was done throughout the entire development process. Full application testing can be found within ![FRONT-END REPO](https://github.com/gayatrig19/we-travellers-frontend)
+All functions have been tested to make sure no functions are availabale to unauthorised users etc. This was done throughout the entire development process. Full application testing can be found within [FRONT-END REPO](https://github.com/gayatrig19/we-travellers-frontend)
 
 
-### Automatic Testing
+### Automated Testing
 
 #### Unit Testing
 
@@ -550,6 +548,18 @@ Unit tests have been created and run on the We Travellers API to test basic CRUD
 ### Deploying in Heroku
 
 - The project has been deployed on Heroku as follows:
+    - In your workspace:
+      - install the following libraries to handle database connection:
+        - psycopg2
+        - dj-database-url
+      - configured dj-rest-auth library for JWTs
+      - set allowed hosts
+      - configured CORS:
+        - set allowed_origins
+      - set default renderer to JSON
+      - add Procfile with release and web commands
+      - gitignore the env.py file
+      - generate requirements.txt 
     - Use: ``pip freeze > requirements.txt`` to add external libraries to deployed app.
     - Create Heroku account
     - In the top right, click 'New'
@@ -565,19 +575,7 @@ Unit tests have been created and run on the We Travellers API to test basic CRUD
       - DATABASE_URL : 'URL from your database account'
       - SECRET_KEY: 'Generate your own secret key'
       - DISABLE_COLLECTSTATIC: set to '1'
-    - Now back in your workspace:
-      - install the following libraries to handle database connection:
-        - psycopg2
-        - dj-database-url
-      - configured dj-rest-auth library for JWTs
-      - set allowed hosts
-      - configured CORS:
-        - set allowed_origins
-      - set default renderer to JSON
-      - add Procfile with release and web commands
-      - gitignore the env.py file
-      - generate requirements.txt 
-    - Now in Heroku again, Scroll down to 'Buildpacks' section
+    - Scroll down to 'Buildpacks' section
     - Click 'Add buildpack'
     - Add Python as first dependency and select 'Save changes'
     - Add node.js as a second dependency and save again (This is settings section done)
