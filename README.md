@@ -4,9 +4,9 @@ This README is for the backend api of a full stack web application - We Travelle
 
    - To view the api in a nicer format install a JSON extension like [this one](https://chromewebstore.google.com/detail/jsonvue/chklaanhfefbnpoihckbnefhakgolnmc)
 
-   - Live API link goes here 
-   - Link to the live site: 
-   - [Link to the Front-End repository](https://github.com/gayatrig19/we-travellers-frontend)
+   - Link to live API: [We Travellers API](https://we-travellers-api-125fa063dfcb.herokuapp.com/)
+   - Link to the live site: [We Travellers](https://we-travellers-3efa8cc2d788.herokuapp.com/)
+   - Link to Front-End Repository: [we-travellers-frontend](https://github.com/gayatrig19/we-travellers-frontend)
 
 
 We Travellers website is developed as a Portfolio Project#5 (Advanced Front End / React) for the Code Institute's Full Stack Software Development Course.
@@ -451,6 +451,23 @@ The database ER diagram was designed using [SmartDraw](https://www.smartdraw.com
 ![we_travellers_entity_relationship_diagram](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716809973/We_Travellers_ER_Diagram_wvul4m.png)
 
 
+- The user model supports pretty much all existing features and allows users to interact with the posts when logged in with the help of foreign key. The breakdown of relationship of User model with other models in DB is as follows. The User Model:
+    - has a one-to-one relationship with Profile.
+    - has a one-to-many relationship with Post.
+    - has a one-to-many relationship with Comment.
+    - can have many followers (many-to-many self-referential relationship through Follower model).
+    - can follow many users (many-to-many self-referential relationship through Follower model).
+    - can like many posts (Like model).
+    - can like many comments (CommentLike model).
+    - can bookmark many posts (Bookmark model).
+- Posts related to user model allowing users to perform CRUD functionality.
+- Comments related to User and Posts model, allowing users to comment on specific user posts and performing CRUD functionality.
+- Followers related to User allows users to follow other user profile and have followers to themselves too.
+- Bookmarks related to Post and User allows users to bookmark(save) other users posts that they are most interested in.
+- Likes related to Post and User allowing users to like posts and show their appreciation to the post and post author.
+- CommentLikes related to Comment and User, allows users to like the comments made by other users on a post, to show their interest in the website content
+
+
 ## Technologies
 
 ### Tools and Technologies
@@ -532,6 +549,12 @@ Unit tests have been created and run on the We Travellers API to test basic CRUD
 
 
 ## Bugs
+
+- During my first API deployment in Heroku, the app build was successful, but as I opened the app I received a 400 bad request. The issue was debugged through workspace terminal by logging in manually to heroku and finding out error.
+  - Fix: Corrected  Procfile for typo in project name and removed the trailing slash from ALLOWED_HOSTS for the workspace URL.
+  - Result: The app was successfully deployed with the welcome message displayed.
+
+- All the minor issues were fixed during development. No bugs are present in the deployed API link. The link is working as expected.
 
 ## Deployment
 
@@ -616,6 +639,12 @@ For more details on how to clone the repository in order to create a copy for ow
 
 
 ## Credits
+
+- The default post placeholder image was used from the "Moments" walkthrough project.
+- The default profile placeholder image was used from the "Moments" walkthrough project.
+- The database ER diagram was designed using [SmartDraw](https://www.smartdraw.com/entity-relationship-diagram/).
+- The main code of this project is based on the tutorial "Django REST Framework" (DRF Walkthrough) by Code Institute. The project was expanded with custom models and functionality to suit my needs.
+- [Django REST Framework Documentation](https://www.django-rest-framework.org/) was used throughout the project to gain more knowledge about different concepts.
 
 
 
