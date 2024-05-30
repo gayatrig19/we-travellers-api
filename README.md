@@ -483,6 +483,7 @@ The database ER diagram was designed using [SmartDraw](https://www.smartdraw.com
 - [SmartDraw](https://www.smartdraw.com/) used to generate the ER Diagram
 - [CI Python Linter](https://pep8ci.herokuapp.com/) - to check python code files for errors.
 
+
 ### Imports
 
 #### Installed packages
@@ -547,14 +548,14 @@ Unit tests have been created and run on the We Travellers API to test basic CRUD
   ![python_unit_tests](https://res.cloudinary.com/dpzitpjjc/image/upload/v1716851232/python_unit_tests_result_ukghbh.png)
 
 
-
 ## Bugs
 
-- During my first API deployment in Heroku, the app build was successful, but as I opened the app I received a 400 bad request. The issue was debugged through workspace terminal by logging in manually to heroku and finding out error.
+- During my first API deployment in Heroku, the app build was successful, but as I opened the app I received a 400 bad request. The issue was debugged through workspace terminal by logging in manually to heroku and detect the error.
   - Fix: Corrected  Procfile for typo in project name and removed the trailing slash from ALLOWED_HOSTS for the workspace URL.
   - Result: The app was successfully deployed with the welcome message displayed.
 
 - All the minor issues were fixed during development. No bugs are present in the deployed API link. The link is working as expected.
+
 
 ## Deployment
 
@@ -645,45 +646,6 @@ For more details on how to clone the repository in order to create a copy for ow
 - The database ER diagram was designed using [SmartDraw](https://www.smartdraw.com/entity-relationship-diagram/).
 - The main code of this project is based on the tutorial "Django REST Framework" (DRF Walkthrough) by Code Institute. The project was expanded with custom models and functionality to suit my needs.
 - [Django REST Framework Documentation](https://www.django-rest-framework.org/) was used throughout the project to gain more knowledge about different concepts.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
